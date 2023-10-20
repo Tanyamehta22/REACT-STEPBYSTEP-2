@@ -1,3 +1,4 @@
+// EXAMPLE OF FUNCTION COMPONENT-
 function User()
 {
     return(

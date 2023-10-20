@@ -1,3 +1,4 @@
+// EXAMPLE OF CLASS BASE COMPONENT
 import React, {Component} from "react";
 export default class User2 extends Component
 {
