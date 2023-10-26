@@ -2,35 +2,22 @@
 import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
-import User from './User'
-import User2 from './User2';
-import User3 from './User3';
+import Student from './Student';
  
-class App extends Component {
-   
-  constructor()
-  {
-    super();
-    this.state={
-      data:1
-    }
-  }
-
-  apple()
-  {
-    this.setState({data:this.state.data+1})
-  }
-
-  render() 
+ 
+ function App()
   {
     return (
       <div className='App'>
-        <h1> Hello world!</h1>
-        <button onclick= {()=> this.apple()}>UPDATE DATA</button>
+        <h1>PROPS IN REACT!</h1>
+         <Student name = "anil" email="anil.com" other={{address:'delhi', mobile: "23939"}}/>
+         
+         <Student name = "Peter" email="peter.com" other={{address:'noida', mobile: "232339"}}/>
+         <Student name = "Preti" email="preti.com" other={{address:'lucknow', mobile: "2392738"}} />
       </div>
     );
   }
     
-}
+
 
 export default App;
