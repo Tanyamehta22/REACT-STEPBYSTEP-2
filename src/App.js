@@ -2,27 +2,32 @@
 import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Student2 from './student2';
-import React from 'react'
-class App extends React.Component{
-  constructor()
+import React , {useStae}from 'react'
+ 
+function App(){
+const [data, setData]=useState(null) 
+const [print, setPrint]=useState(false) 
+
+  function getData(val)
   {
-    super();
-    this.state={
-      name:"Anil"
-    }
+    console.log(val.target.value)
+    setData(val.target.value)
+    setPrint(false)
+
   }
-render()
-{
   return(
     <div className='App'>
-      <h1>Props!!</h1>
-      <Student2 name={this.state.name}email="anil@gmail.com"/>
-      <button> onclick={()=>this.setState({name:"Sidhu"})}UPDATE NAME</button>
+     {
+      print?
+      <h1>{data}</h1>
+      :null
+     }
+      <input type="text" onChange={getData}/>
+      <button onClick={()=>setPrint(true)}>Print Data</button>
     </div>
   );
 }
-}
+  
 
 
 export default App;
