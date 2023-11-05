@@ -5,32 +5,19 @@ import './App.css';
 import React , {useStae}from 'react'
  
 function App(){
-const [data, setData]=useState(null) 
-const [print, setPrint]=useState(false) 
-
-  function getData(val)
-  {
-    console.log(val.target.value)
-    setData(val.target.value)
-    setPrint(false)
-
-  }
+  const [status, setstatus]= React.usedState(true)
   return(
     <div className='App'>
-     {
-      print?
-      <h1>{data}</h1>
-      :null
-     }
-      <input type="text" onChange={getData}/>
-      <button onClick={()=>setPrint(true)}>Print Data</button>
+      {
+        status? <h1>Hello World!</h1> :null
+      }
+       
+      {/* <button onClick={()=> setstatus(false)}>HIDE</button>
+      <button onClick={()=> setstatus(true)}>SHOW</button> */}
+      <button onClick={()=> setstatus(!status)}>TOGGLE</button> 
+
     </div>
   );
 }
-  
-
 
 export default App;
- 
- 
-   
