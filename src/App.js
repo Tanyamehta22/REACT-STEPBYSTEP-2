@@ -2,12 +2,25 @@
  
 import logo from './logo.svg';
 import './App.css';
-import login from './login'
+import User from './User4';
+import Members from './Members';
+
 function App(){
-const data = true;
+  function getData()
+  {
+    alert("hello from app")
+  }
+ 
 return(
   <div className='App'>
-    <login/>
+    <User4 data={getData}/>
+    <User4 data={getData}/>
+    <User4 data={getData}/>
+    <User4 data={getData}/>
+    <div style={{float: 'right'}}>
+      <Members data={getData/>
+    </div>
+     
   </div>
 );
 }
