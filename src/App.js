@@ -1,31 +1,22 @@
-
- 
 import logo from './logo.svg';
 import './App.css';
-import React from 'react'
- 
-class App extends React.Component{
-  constructor()
-  {
-    super();
-    this.states={
-      data: "Anil"
+import User5 from './USER5.JS';
 
-    }
-     
-  }
-  render()
-  {
-    console.warn("render")
-
-    return(
-      <h1>Hello World {this.state.data}</h1>
-    )
-  }
+function App(){
+  const [name, setName]= React.useState("Anil")
+  return(
+    <div className='App'>
+      <h1>Render Method in React</h1>
+      <User5/>
+      {/*<button onClick={()=>setName("Sindu")}>UPDATE NAME</button> */}
+    </div>
+  );
 }
+
+export default App;
  
- export default App;
-   
+ 
+ 
   
    
   
