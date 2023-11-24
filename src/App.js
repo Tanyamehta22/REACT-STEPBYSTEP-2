@@ -5,16 +5,23 @@ class App extends React.Component{
   constructor()
   {
     super();
+    console.log("constructor")
     this.state={
-      name:"anil"
+      count:0
     }
+
+     
 
 
      
   }
-  componentDidMount()
+  componentDidUpdate(preProps, preState, snapshot)
   {
-    console.warn("componentDidMount")
+    console.warn("componentDidUpdate",preState.count,this.state.count)
+    if(this.state.count<10)
+    {
+       this.setState({count:this.state.count+1})
+    }
   }
   }
   render()
@@ -23,8 +30,8 @@ class App extends React.Component{
 
     return(
       <div className='App'>
-        <h1>Component Did Mount {this.state.name}</h1>
-        <button onClick={()=>{this.setState({name: "Sidhu"})}}>Update Name</button>
+        <h1>Component Did Update{this.state.count}</h1>
+        <button onClick={()=>{this.setState({count:1})}}>Update Name</button>
       </div>
     );
   }
