@@ -1,17 +1,17 @@
 import "./App.css";
-import React, { useEffect, useState } from "react";
-import User7 from "./User7";
-function App() {
-  const [data, setData] = useState(100);
-  const [count, setCount] = useState(100);
-
+import "./style.css"
+import style from './custom.module.css'
+import React from "react";
+ 
   return (
     <div className="App">
-      <User count={count} data={data} />
-      <button onClick={() => setCount(count + 1)}>Update Counter</button>
-      <button onClick={() => setData(data + 1)}>Update Data</button>
+      <h1 className="primary">Style type 1 in React js</h1>
+      <h1 style={{color:'red', backgroundColor: "black"}}>Style type 2 in React js</h1>
+      <h1 className={style.success}>Style type 3 in React js</h1>
+
+       
     </div>
   );
-}
+
 
 export default App;
