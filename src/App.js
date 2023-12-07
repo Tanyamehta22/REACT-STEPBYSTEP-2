@@ -1,21 +1,27 @@
 import "./App.css";
-import React from "react";
-import Cols from './cols'
-function App() {
-
-  function parentAlert(data)
+import React, {PureComponent} from "react";
+import User from "./User10";
+ 
+class App extends React.Component{
+  constructor()
   {
-    console.log(data)
-    alert(data.name);
+    super();
+    this.state={
+      count:1
+    }
   }
-  
-  return (
+   
+  render()
+  { 
+    return(
       <div className="App">
-        <h1>Lifting State Up</h1>
-        <User alert={parentAlert} />
+        <User count={this.state.count}/>
+        <button onClick={()=> this.setState({count: this.state.count+1})}>Update Count</button>
       </div>
-     
-  );
+    );
+  }
 }
+     
+   
 
 export default App;
