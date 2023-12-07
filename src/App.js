@@ -1,44 +1,19 @@
 import "./App.css";
 import React from "react";
-import User from './USER8'
+import Cols from './cols'
 function App() {
-  const users = [
-    {
-      name: "anil",
-      email: "anil@test.com",
-      contact: "111"
-    },
-
-    {
-      name: "sidhu",
-      email: "sidhu@test.com",
-      contact: "222"
-    },
-
-    {
-      name: "sam",
-      email: "sam@test.com",
-      contact: "333"
-    },
-
-    {
-      name: "peter",
-      email: "peter@test.com",
-       contat:"444"
-    },
-  ];
-
   return (
-    <div className="App">
-      <h1>REUSE COMPONENT WITH LIST</h1>
-      {
-        users.map((item,i)=>
-        <User/>
-        )
-      }
-      </div>
+    <div>
+      <h1>React Fragment</h1>
+       <table>
+        <tbody>
+          <tr>
+            <Cols/>
+          </tr>
+        </tbody>
+       </table>
+    </div>
   );
-         
 }
 
 export default App;
