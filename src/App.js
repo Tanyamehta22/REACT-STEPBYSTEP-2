@@ -4,6 +4,7 @@ import Home from './component/home'
 import About from '/component/about'
 import NavBar from "./components/Navbar";
 import Page404 from "./component/Page404";
+import User from "./component/User";
  
  
 function App(){
@@ -15,7 +16,9 @@ function App(){
         <Route path='/' element={<home/>} />
         <Route path='/about' element={<About/>} />
 
-        {/* <Route path='/*' element={<Page404/>} /> */}
+        <Route path='/user:name' element={<User/>} />
+
+        
 
         <Route path='/*' element={<Navigate to="/" />} />
         
