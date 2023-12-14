@@ -1,41 +1,25 @@
 import "./App.css";
-import React, {useRef, useState} from "react";
+import {BrowserRouter} from 'react-router-dom';
+import Home from './component/home'
+import About from '/component/about'
+ 
  
 function App(){
   return (
-  <div className="App">
-    <h1>HOC</h1>
-    <HOCRed cmp={Counter}/>
-    <HOCGreen cmp={Counter}/>
-    <HOCBlue cmp={Counter}/>
-  </div>
+    <div className="App">
+      <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<home/>} />
+        <Route path='/about' element={<About/>} />
+
+      </Routes>
+      </BrowserRouter>
+      <h1>Hello React router 6</h1>
+    </div>
   );
 }
-
-function HOCRed(props)
-{
-  return <h2 style={{backgroundColor: 'red', width: 100}}>RED<props.cmp/></h2>
-}
-
-function HOCGreen(props)
-{
-  return <h2 style={{backgroundColor: 'green', width: 100}}>GREEN<props.cmp/></h2>
-}
-
-function HOCBlue(props)
-{
-  return <h2 style={{backgroundColor: 'blue', width: 100}}>BLUE<props.cmp/></h2>
-}
-
-function Counter()
-{
-  const [count,setCount] = useState(0)
-  return <div>
-    <h3>{count}</h3>
-    <button onClick={()=> setCount(count+1)}>UPDATE</button>
-  </div>
-}
-
+  
+   
 export default App;
   
 
