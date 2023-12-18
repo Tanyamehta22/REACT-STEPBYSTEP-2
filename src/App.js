@@ -14,7 +14,8 @@ function App(){
       <BrowserRouter>
       <NavBar/>
       <Routes>
-        <Route path='/' element={<home/>} />
+        <Route path='/' element={<Protected Component={Home}/>} />
+        <Route path='/login' element={<login/>} />
         <Route path='/about' element={<About/>} />
 
         <Route path='/user:name' element={<User/>} />

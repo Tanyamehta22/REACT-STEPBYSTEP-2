@@ -14,6 +14,8 @@ function NavBar(){
             style={({isActive})=>{return{color:  isActive ? 'skyblue' :''}}} className="nav-bar-link"  to='/contact'>Contact Us</NavLink> </li>
             <li><a href='/User/anil'>Anil</a></li>
             <li><a href='/User/peter'>Peter</a></li>
+
+            <li><NavLink className='nav-bar-link' to='/login'>Login </NavLink></li>
             
             
         </ul>
