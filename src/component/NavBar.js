@@ -5,7 +5,7 @@ function NavBar(){
         <ul className='navbar'>
            
             <li><NavLink 
-            style={({isActive})=>{return {color:  isActive ? 'skyblue' :''}}}className="nav-bar-link" style={{color:'red'}} to='/'>Home</NavLink></li>
+            style={({isActive})=>{return {color:  isActive ? 'skyblue' :''}}}className="nav-bar-link" to='/'>Home</NavLink></li>
 
             <li><NavLink
             style={({isActive})=>{return{color:  isActive ? 'skyblue' :' '}}} className="nav-bar-link"  to='/about'>About</NavLink>  </li>
