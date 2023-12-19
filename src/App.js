@@ -1,65 +1,36 @@
  import './App.css';
  import React from 'react'
  import {BrowserRouter as Route,Link,Route } from 'react-router-dom'
+ import User from './component/User';
   
  function App(){
-  return (
+  let users=[
+    {id: 1, name: 'anil', email:'anil@test.com'},
+    {id: 2, name: 'sam', email:'sam@test.com'},
+    {id: 3, name: 'peter', email:'peter@test.com'},
+    {id: 4, name: 'bruce', email:'bruce@test.com'},
+    {id: 5, name: 'tony', email:'tony@test.com'},
+
+  ]
+
+  return(
     <div className='App'>
-        <Router>
-            <Link to='/' >Home</Link><br/><br/>
-            <Link to='/' >About</Link><br/><br/>
-            <Link to='/login' >LOGIN</Link><br/><br/>
-
-
-            <switch>
-            <Route path='/' exact={true}><Home/></Route>
-            <Route path='/about'><About/></Route>
-
-            <Route path='*'><PageNotFound/></Route>
-            </switch>
-
-
-        </Router>
-        
-       
-    </div>
+      <Router>
+        <h1>React Dynamic Routing</h1>
+        {
+          users.map((item)=><div><Link to={"/user/" + item.id+'/'+item.name}><h3>{item.name}</h3></Link></div>)
+ }
+ <Route path="/user/:id :/name"><User/></Route>
+ </Router>
+  </div>
   );
- }
+}  
+   
 
- function Home(){
-  return (
-    <div>
-      <h1>HOME PAGE</h1>
-      <p>This is home page of website</p>
-    </div>
-  )
- }
-
- function About(){
-  return (
-    <div>
-      <h1>ABOUT PAGE</h1>
-      <p>This is about page of website</p>
-    </div>
-  )
- }
-
- function About(){
-  return (
-    <div>
-      <h1>ABOUT PAGE</h1>
-      <p>This is about page of website</p>
-    </div>
-  )
- }
-  
+           
+       
+   
  
- function PageNotFound(){
-  return (<div>
-    <h1>404 Page</h1>
-    <p>This is Not found</p>
-  </div>)
- }
 export default App;
   
 

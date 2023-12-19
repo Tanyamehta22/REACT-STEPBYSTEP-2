@@ -1,16 +1,15 @@
 import { useLocation } from "react-router";
-import {useParams} from "react-router-dom"
-
-function User(){
-    const params = useParams();
-    const {name} = params;
-    const location =useLocation();
-    console.log(location)
+function User(prop)
+{
+    console.warn(prop.match.params.id)
     return(
         <div>
-            <h1>This is {name} Page</h1>
+            <h1>Hi this is user no{prop.match.params.id}</h1>
+
+            <h1>Hi this is {prop.match.params.name}</h1>
         </div>
     )
 }
+ 
 
 export default User
