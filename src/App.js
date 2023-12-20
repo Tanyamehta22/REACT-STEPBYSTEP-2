@@ -1,31 +1,41 @@
  import './App.css';
- import React from 'react'
- import {BrowserRouter as Route,Link,Route } from 'react-router-dom'
- import User from './component/User';
-  
+ import React,{useEffect,useState} from 'react'
  function App(){
-  let users=[
-    {id: 1, name: 'anil', email:'anil@test.com'},
-    {id: 2, name: 'sam', email:'sam@test.com'},
-    {id: 3, name: 'peter', email:'peter@test.com'},
-    {id: 4, name: 'bruce', email:'bruce@test.com'},
-    {id: 5, name: 'tony', email:'tony@test.com'},
-
-  ]
-
+  const [data, setData]= useState([])
+  useEffect(()=>{
+    fetch("http://localhost:4000/todo").then((result)=>{
+      result.json().then((resp)=>{
+        // console.warn("result",resp)
+        setData(resp)
+      })
+    })
+  },[])
+  console.warn(data)
   return(
     <div className='App'>
-      <Router>
-        <h1>React Dynamic Routing</h1>
+      <h1>GET API CALL</h1>
+      <table border='1'>
+        <tr>
+          <td>ID</td>
+          <td>Name</td>
+          <td>Email</td>
+          <td>Mobile</td>
+        </tr>
         {
-          users.map((item)=><div><Link to={"/user/" + item.id+'/'+item.name}><h3>{item.name}</h3></Link></div>)
+          data.map((item)=>
+          <tr>
+            <td>{item.userId}</td>
+            <td>{item.name}</td>
+            <td>{item.email}</td>
+            <td>{item.mobile}</td>
+          </tr>
+          )
+        }
+      </table>
+    </div>
+  )
  }
- <Route path="/user/:id :/name"><User/></Route>
- </Router>
-  </div>
-  );
-}  
-   
+
 
            
        
